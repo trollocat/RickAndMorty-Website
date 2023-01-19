@@ -1,8 +1,7 @@
-import Card from "../Card/Card";
-import { CardList } from "../styled";
+import Card from "./Card";
+import { CardList } from "../css/StyledHome";
 
-const Cards = (props) => {
-  const { characters } = props;
+const Cards = ({ characters, onClose }) => {
   return (
     <CardList>
       {characters.map(({ id, name, species, gender, image }) => {
@@ -13,9 +12,7 @@ const Cards = (props) => {
             species={species}
             gender={gender}
             image={image}
-            onClose={() =>
-              window.alert("Emula que se cierra la card de " + name)
-            }
+            onClose={() => onClose(id)}
           />
         );
       })}

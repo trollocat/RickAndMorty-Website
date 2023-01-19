@@ -1,10 +1,17 @@
-import CharactersPanel from "./components/CharactersPanel/CharactersPanel";
-import styled from "styled-components";
+import Home from "./Home";
+import About from "./About";
+import Detail from "./Detail";
 
-function App() {
+import { Routes, Route } from "react-router-dom";
+
+const App = () => {
   return (
-      <CharactersPanel/>
+    <Routes>
+      <Route path="" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="detail/:detailId" element={<Detail />} />
+    </Routes>
   );
-}
+};
 
 export default App;
